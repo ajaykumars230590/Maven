@@ -1,5 +1,6 @@
 package mavennewproject;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Reporter;
@@ -13,8 +14,10 @@ public class MavenNewProject {
 	{
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
-		driver.get("https://www.google.com");
-		Reporter.log("Maven Practise working fine", true);
+		driver.get("https://www.seleniumhq.org/");
+		System.out.println(driver.getTitle());
+		driver.findElement(By.xpath("//a[@title='Get Selenium']")).click();
+		System.out.println(driver.getTitle());
 		driver.close();
 	}
 }
